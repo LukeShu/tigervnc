@@ -1122,15 +1122,10 @@ void DesktopWindow::scrollTo(int x, int y)
   hscroll->value(x);
   vscroll->value(y);
 
-  // Scrollbar position results in inverse movement of
-  // the viewport widget
-  x = -x;
-  y = -y;
-
-  if ((viewport->x() == x) && (viewport->y() == y))
+  if ((viewport->x() == -x) && (viewport->y() == -y))
     return;
 
-  viewport->position(x, y);
+  viewport->position(-x, -y);
   damage(FL_DAMAGE_SCROLL);
 }
 
