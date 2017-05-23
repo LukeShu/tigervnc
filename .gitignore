@@ -1,0 +1,13 @@
+CMakeCache.txt
+CMakeFiles/
+Makefile
+*.cmake
+
+/config.h
+*.a
+*.la
+
+*.mo
+
+*.class
+*.jar
