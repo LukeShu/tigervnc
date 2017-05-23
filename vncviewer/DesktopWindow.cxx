@@ -1046,12 +1046,14 @@ void DesktopWindow::repositionWidgets()
 
   // Scrollbars visbility
 
-  if (!fullscreen_active() && (w() < viewport->w()))
+  if (!fullscreen_active() &&
+      (w() - (h() < viewport->h() ? Fl::scrollbar_size() : 0) < viewport->w()))
     hscroll->show();
   else
     hscroll->hide();
 
-  if (!fullscreen_active() && (h() < viewport->h()))
+  if (!fullscreen_active() &&
+      (h() - (w() < viewport->w() ? Fl::scrollbar_size() : 0) < viewport->h()))
     vscroll->show();
   else
     vscroll->hide();
